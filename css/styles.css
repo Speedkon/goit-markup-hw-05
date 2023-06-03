@@ -148,7 +148,7 @@ ul, ol {
 .hero-btn {
     min-width: 169px;
     height: 56px;
-    background: var(--iris-color);
+    background-color: var(--iris-color);
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -162,6 +162,7 @@ ul, ol {
     margin-top: auto;
     margin-right: auto;
     margin-left: auto;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -306,6 +307,7 @@ ul, ol {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-soc-link:hover,
 .team-soc-link:focus {
@@ -347,7 +349,8 @@ ul, ol {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--light-slate)
+    color: var(--light-slate);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-link:hover,
 .customers-link:focus {
@@ -413,6 +416,7 @@ ul, ol {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-soc-link:hover,
 .footer-soc-link:focus {
@@ -435,7 +439,7 @@ ul, ol {
 }
 .portfolio-search-btn {
     font-family: "Roboto", sans-serif;
-    background: var(--cloud-color);
+    background-color: var(--cloud-color);
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -446,6 +450,10 @@ ul, ol {
     border: 1px solid #E7E9FC;
     border-radius: 4px;
     padding: 12px 24px ;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-search-btn:hover,
 .portfolio-search-btn:focus {
@@ -457,21 +465,19 @@ ul, ol {
         background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         border 250ms cubic-bezier(0.4, 0, 0.2, 1),
         box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 .projects {
     display: flex;
     flex-wrap: wrap;
     gap: 48px 24px;
 }
-.projects-item:hover .projects-cover-text {
-    transform: translateY(0%);
-}
+.projects-item:hover .projects-cover-text,
 .projects-item:focus .projects-cover-text {
     transform: translateY(0%);
 }
 .projects-item-link {
     display: block;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .projects-item-link:hover,
 .projects-item-link:focus {
@@ -490,9 +496,7 @@ ul, ol {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--cloud-color);
-    padding-top: 40px;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 40px 32px;
     background-color: var(--iris-color);
     height: 100%;
     transform: translateY(100%);
@@ -526,14 +530,14 @@ ul, ol {
     height: 100%;
     background: rgba(46, 47, 66, 0.4);
     top: 0;
-    transition: opacity 300ms linear, visibility 300ms linear;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
-    transition: transform 300ms linear;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     width: 408px;
     min-height: 584px;
     background: var(--dairy);
@@ -545,7 +549,10 @@ ul, ol {
     transform: translate(-50%, -50%) scale(0);
 }
 .modal-close {
+    position: absolute;
     background-color: var(--cornflower);
+    top: 24px;
+    right: 24px;
     width: 24px;
     height: 24px;
     border: 1px solid rgba(0, 0, 0, 0.1);;
@@ -554,6 +561,9 @@ ul, ol {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close:hover,
 .modal-close:focus {
@@ -561,8 +571,11 @@ ul, ol {
     border: none;
     fill: var(--white-color);
 }
+.modal-close-svg {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .is-hidden {
-    visibility: none;
+    visibility: hidden;
     opacity: 0;
     pointer-events: none;
 }
